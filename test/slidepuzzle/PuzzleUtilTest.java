@@ -12,12 +12,12 @@ public class PuzzleUtilTest {
         
     }
     
-    @Test
+    @Test //jny
     public void shuffleButtonsTest(){
         
     }
     
-    @Test
+    @Test //jny
     public void switchButtonsTest(){
         
     }
