@@ -6,6 +6,8 @@ import javax.swing.*;
 
 
 public class SlidePuzzle extends JFrame{
+    //Kommentar för test
+    
     JPanel backgroundPanel = new JPanel();
     JPanel puzzlePanel = new JPanel();
     JPanel topPanel = new JPanel();
