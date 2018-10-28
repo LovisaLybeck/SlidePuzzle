@@ -6,6 +6,8 @@ import javax.swing.*;
 
 
 public class SlidePuzzle extends JFrame{
+    PuzzleUtil pu = new PuzzleUtil();
+    
     JPanel backgroundPanel = new JPanel();
     JPanel puzzlePanel = new JPanel();
     JPanel topPanel = new JPanel();
@@ -14,6 +16,8 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
+    // Ta bort initialiseringen här? De byter nummer längre ner, 
+    // innan de visas för första gången.
     JButton button1 = new JButton("1");
     JButton button2 = new JButton("2");
     JButton button3 = new JButton("3");
@@ -29,7 +33,7 @@ public class SlidePuzzle extends JFrame{
     JButton button13 = new JButton("13");
     JButton button14 = new JButton("14");
     JButton button15 = new JButton("15");
-    JButton button16 = new JButton("16");
+    JButton button16 = new JButton("");
     
     SlidePuzzle(){
         backgroundPanel.setLayout(new FlowLayout());
@@ -61,11 +65,29 @@ public class SlidePuzzle extends JFrame{
         
         button1.setPreferredSize(new Dimension(50, 50));
         
-        setSize(250, 330);
+        setSize(300, 330);
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        
+        pu.shuffleNumbersForButtons();
+        button1.setText(pu.shuffledButtonNumbers[0]);
+        button2.setText(pu.shuffledButtonNumbers[1]);
+        button3.setText(pu.shuffledButtonNumbers[2]);
+        button4.setText(pu.shuffledButtonNumbers[3]);
+        button5.setText(pu.shuffledButtonNumbers[4]);
+        button6.setText(pu.shuffledButtonNumbers[5]);
+        button7.setText(pu.shuffledButtonNumbers[6]);
+        button8.setText(pu.shuffledButtonNumbers[7]);
+        button9.setText(pu.shuffledButtonNumbers[8]);
+        button10.setText(pu.shuffledButtonNumbers[9]);
+        button11.setText(pu.shuffledButtonNumbers[10]);
+        button12.setText(pu.shuffledButtonNumbers[11]);
+        button13.setText(pu.shuffledButtonNumbers[12]);
+        button14.setText(pu.shuffledButtonNumbers[13]);
+        button15.setText(pu.shuffledButtonNumbers[14]);
+        
+        
     }
 
     public static void main(String[] args) {
