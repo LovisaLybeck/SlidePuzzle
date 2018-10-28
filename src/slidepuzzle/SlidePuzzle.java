@@ -93,16 +93,14 @@ public class SlidePuzzle extends JFrame{
         // isWon()
         
         class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            // pu.isNextToEmptyButton(ae.getSource());
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                // pu.isNextToEmptyButton(ae.getSource());
+            }
         }
-}
-        
     }
     
     public static void main(String[] args) {
         SlidePuzzle sp = new SlidePuzzle();
     }
-
 }
