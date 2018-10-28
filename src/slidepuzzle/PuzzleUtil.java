@@ -16,7 +16,6 @@ public class PuzzleUtil {
         
     }
     
-    // ingen para eller return
     public void shuffleNumbersForButtons(){
         for (int i = 1; i <= 15; i++) {
             Random random = new Random();
@@ -31,12 +30,9 @@ public class PuzzleUtil {
         }        
     }
     
-    
-            
-    
-    // para: klickad knapp + tom knapp = obj JButton
-    public void switchButtons(){
-        // Ändrar innehållet i variablerna
+    public void switchButtons(JButton pressedButton, JButton emptyButton){
+        emptyButton.setText(pressedButton.getText());
+        pressedButton.setText("");
     }
     
     // para: inget, return boolean

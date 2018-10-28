@@ -14,9 +14,7 @@ public class PuzzleUtilTest {
         
     }
     
-    // Det här testet förutsätter att man alltid börjar med siffrorna i ordning.
-    // Först kolla att de ligger i ordning? I en egen testmetod? Därefter köra shuffle,
-    // och därefter denna testmetod.
+    
     @Test //jny
     public void shuffleNumbersForButtonsTest(){
         pu.shuffleNumbersForButtons();
@@ -44,7 +42,13 @@ public class PuzzleUtilTest {
     
     @Test //jny
     public void switchButtonsTest(){
-        
+        JButton button15 = new JButton("9");
+        JButton button16 = new JButton("");
+        pu.switchButtons(button15, button16);
+        TestCase.assertTrue(button15.getText() == "");
+        TestCase.assertFalse(button15.getText() == "9");
+        TestCase.assertTrue(button16.getText() == "9");
+        TestCase.assertFalse(button16.getText() == "");
     }
     
     @Test

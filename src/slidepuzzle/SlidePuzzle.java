@@ -2,6 +2,8 @@
 package slidepuzzle;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
@@ -16,23 +18,23 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
-    // Ta bort initialiseringen här? De byter nummer längre ner, 
-    // innan de visas för första gången.
-    JButton button1 = new JButton("1");
-    JButton button2 = new JButton("2");
-    JButton button3 = new JButton("3");
-    JButton button4 = new JButton("4");
-    JButton button5 = new JButton("5");
-    JButton button6 = new JButton("6");
-    JButton button7 = new JButton("7");
-    JButton button8 = new JButton("8");
-    JButton button9 = new JButton("9");
-    JButton button10 = new JButton("10");
-    JButton button11 = new JButton("11");
-    JButton button12 = new JButton("12");
-    JButton button13 = new JButton("13");
-    JButton button14 = new JButton("14");
-    JButton button15 = new JButton("15");
+    // Tog bort initialiseringen här, på alla utom den tomma knappen. 
+    // De byter nummer längre ner, innan de visas för första gången.
+    JButton button1 = new JButton();
+    JButton button2 = new JButton();
+    JButton button3 = new JButton();
+    JButton button4 = new JButton();
+    JButton button5 = new JButton();
+    JButton button6 = new JButton();
+    JButton button7 = new JButton();
+    JButton button8 = new JButton();
+    JButton button9 = new JButton();
+    JButton button10 = new JButton();
+    JButton button11 = new JButton();
+    JButton button12 = new JButton();
+    JButton button13 = new JButton();
+    JButton button14 = new JButton();
+    JButton button15 = new JButton();
     JButton button16 = new JButton("");
     
     SlidePuzzle(){
@@ -86,10 +88,19 @@ public class SlidePuzzle extends JFrame{
         button13.setText(pu.shuffledButtonNumbers[12]);
         button14.setText(pu.shuffledButtonNumbers[13]);
         button15.setText(pu.shuffledButtonNumbers[14]);
+        // Kolla direkt här om sifforna råkat hamna i ordning, 
+        // så att spelet redan är vunnet.
+        // isWon()
         
+        class ButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            // pu.isNextToEmptyButton(ae.getSource());
+        }
+}
         
     }
-
+    
     public static void main(String[] args) {
         SlidePuzzle sp = new SlidePuzzle();
     }
