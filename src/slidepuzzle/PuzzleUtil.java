@@ -1,5 +1,7 @@
 package slidepuzzle;
 
+import javax.swing.JButton;
+
 public class PuzzleUtil {
     
     SlidePuzzle sp = new SlidePuzzle();
@@ -25,5 +27,10 @@ public class PuzzleUtil {
     // para: inget, return boolean
     public void isWon(){
         
+    }
+    
+    // parameter: knappnamn (obj), retur: texten på knappen som int
+    public int buttonsTextAsInt(JButton button) {
+        return 1; // ändra när metoden är skriven
     }
 }
