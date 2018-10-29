@@ -18,7 +18,7 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
-    // Tog bort tilldelningen här, på alla utom den tomma knappen. 
+    // Tog bort tilldelningen här, på alla utom den tomma knappen.
     // De får sitt randomiserade nummer innan de visas för första gången.
     JButton button1 = new JButton();
     JButton button2 = new JButton();
@@ -88,6 +88,8 @@ public class SlidePuzzle extends JFrame{
         pu.setRandomNumbersOnButtons();
         // Kolla direkt här om sifforna råkat hamna i ordning, så att spelet redan är vunnet.
         // isWon()
+        
+        // bbb
 
         
         
