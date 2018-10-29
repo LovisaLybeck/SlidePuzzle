@@ -74,6 +74,8 @@ public class SlidePuzzle extends JFrame{
                     pu.shuffleNumbersForButtons();
                     setRandomNumbersOnButtons();
                 } while (isWon());
+                
+                wonLabel.setText("Puzzle Game");
             }
         });
         button1.addActionListener(new ActionListener() {
