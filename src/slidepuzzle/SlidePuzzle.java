@@ -18,8 +18,8 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
-    // Tog bort initialiseringen här, på alla utom den tomma knappen. 
-    // De byter nummer längre ner, innan de visas för första gången.
+    // Tog bort tilldelningen här, på alla utom den tomma knappen. 
+    // De får sitt randomiserade nummer innan de visas för första gången.
     JButton button1 = new JButton();
     JButton button2 = new JButton();
     JButton button3 = new JButton();
@@ -68,7 +68,8 @@ public class SlidePuzzle extends JFrame{
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                isNextToEmptyButton(button1);
+                pu.shuffleNumbersForButtons();
+                pu.setRandomNumbersOnButtons();
             }
         });
         button1.addActionListener(new ActionListener() {
@@ -167,6 +168,8 @@ public class SlidePuzzle extends JFrame{
                 isNextToEmptyButton(button16);
             }
         });
+        button1.setPreferredSize(new Dimension(50, 50));
+        puzzlePanel.setPreferredSize(new Dimension(250, 250));
         
         puzzlePanel.setPreferredSize(new Dimension(250, 250));
         
@@ -174,84 +177,6 @@ public class SlidePuzzle extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        
-        pu.shuffleNumbersForButtons();
-        button1.setText(pu.shuffledButtonNumbers[0]);
-        button2.setText(pu.shuffledButtonNumbers[1]);
-        button3.setText(pu.shuffledButtonNumbers[2]);
-        button4.setText(pu.shuffledButtonNumbers[3]);
-        button5.setText(pu.shuffledButtonNumbers[4]);
-        button6.setText(pu.shuffledButtonNumbers[5]);
-        button7.setText(pu.shuffledButtonNumbers[6]);
-        button8.setText(pu.shuffledButtonNumbers[7]);
-        button9.setText(pu.shuffledButtonNumbers[8]);
-        button10.setText(pu.shuffledButtonNumbers[9]);
-        button11.setText(pu.shuffledButtonNumbers[10]);
-        button12.setText(pu.shuffledButtonNumbers[11]);
-        button13.setText(pu.shuffledButtonNumbers[12]);
-        button14.setText(pu.shuffledButtonNumbers[13]);
-        button15.setText(pu.shuffledButtonNumbers[14]);
-        // Kolla direkt här om sifforna råkat hamna i ordning, 
-        // så att spelet redan är vunnet.
-        // isWon()
-        
-        class ButtonListener implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-//                if (ae.getSource() == newGameButton){
-//                    
-//                } else if (ae.getSource() == button1) {
-//                    pu.isNextToEmptyButton(button1);
-//                    System.out.println("hej");
-//                    
-//                } else if (ae.getSource() == button2) {
-//                    pu.isNextToEmptyButton(button2);
-//                    
-//                } else if (ae.getSource() == button3) {
-//                    pu.isNextToEmptyButton(button3);
-//                    
-//                } else if (ae.getSource() == button4) {
-//                    pu.isNextToEmptyButton(button4);
-//                    
-//                } else if (ae.getSource() == button5) {
-//                    pu.isNextToEmptyButton(button5);
-//                    
-//                } else if (ae.getSource() == button6) {
-//                    pu.isNextToEmptyButton(button6);
-//                    
-//                } else if (ae.getSource() == button7) {
-//                    pu.isNextToEmptyButton(button7);
-//                    
-//                } else if (ae.getSource() == button8) {
-//                    pu.isNextToEmptyButton(button8);
-//                    
-//                } else if (ae.getSource() == button9) {
-//                    pu.isNextToEmptyButton(button9);
-//                    
-//                } else if (ae.getSource() == button10) {
-//                    pu.isNextToEmptyButton(button10);
-//                    
-//                } else if (ae.getSource() == button11) {
-//                    pu.isNextToEmptyButton(button11);
-//                    
-//                } else if (ae.getSource() == button12) {
-//                    pu.isNextToEmptyButton(button12);
-//                    
-//                } else if (ae.getSource() == button13) {
-//                    pu.isNextToEmptyButton(button13);
-//                    
-//                } else if (ae.getSource() == button14) {
-//                    pu.isNextToEmptyButton(button14);
-//                    
-//                } else if (ae.getSource() == button15) {
-//                    pu.isNextToEmptyButton(button15);
-//                    
-//                } else if (ae.getSource() == button16) {
-//                    pu.isNextToEmptyButton(button16);
-//                    
-//                }
-            }
-        }
     }
     
      public void isNextToEmptyButton(JButton pressedButton){
@@ -439,5 +364,12 @@ public class SlidePuzzle extends JFrame{
     
     public static void main(String[] args) {
         SlidePuzzle sp = new SlidePuzzle();
+        PuzzleUtil pu = new PuzzleUtil();
+        
+        pu.shuffleNumbersForButtons();
+        pu.setRandomNumbersOnButtons();
+        // Kolla direkt här om sifforna råkat hamna i ordning, så att spelet redan är vunnet.
+        // isWon()
+    
     }
 }

@@ -34,7 +34,7 @@ public class PuzzleUtilTest {
                             nr13 > nr14 || nr14 > nr15);
     }
     
-    @Test //jny
+    @Test
     public void switchButtonsTest(){
         JButton button15 = new JButton("9");
         JButton button16 = new JButton("");
