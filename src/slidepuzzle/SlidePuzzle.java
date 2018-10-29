@@ -18,8 +18,6 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
-    // Tog bort tilldelningen här, på alla utom den tomma knappen. 
-    // De får sitt randomiserade nummer innan de visas för första gången.
     JButton button1 = new JButton();
     JButton button2 = new JButton();
     JButton button3 = new JButton();
@@ -38,6 +36,10 @@ public class SlidePuzzle extends JFrame{
     JButton button16 = new JButton("");
     
     SlidePuzzle(){
+        do {
+            pu.shuffleNumbersForButtons();
+            setRandomNumbersOnButtons();
+        } while (isWon());
         backgroundPanel.setLayout(new FlowLayout());
         puzzlePanel.setLayout(new GridLayout(4, 4));
         add(backgroundPanel);
@@ -68,8 +70,10 @@ public class SlidePuzzle extends JFrame{
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                pu.shuffleNumbersForButtons();
-                pu.setRandomNumbersOnButtons();
+                do {
+                    pu.shuffleNumbersForButtons();
+                    setRandomNumbersOnButtons();
+                } while (isWon());
             }
         });
         button1.addActionListener(new ActionListener() {
@@ -180,6 +184,7 @@ public class SlidePuzzle extends JFrame{
     }
     
      public void isNextToEmptyButton(JButton pressedButton){
+        wonLabel.setText("Puzzle Game");
         if (pressedButton == button1){
             if (button2.getText().equals("")) {
                 pu.switchButtons(pressedButton, button2);
@@ -356,20 +361,54 @@ public class SlidePuzzle extends JFrame{
                 wonLabel.setText("Det måste finnas en tom ruta bredvid!");
             }
         }
-        // Om tom knapp inte finns bredvid klickad knapp så ändrar den 
-        // texten i wonLabel
-        // kallar på switchButtons
         
+        if (isWon()){
+            wonLabel.setText("Du vann!");
+        }
+    }
+     
+     public void setRandomNumbersOnButtons(){
+        button1.setText(pu.shuffledButtonNumbers[0]);
+        button2.setText(pu.shuffledButtonNumbers[1]);
+        button3.setText(pu.shuffledButtonNumbers[2]);
+        button4.setText(pu.shuffledButtonNumbers[3]);
+        button5.setText(pu.shuffledButtonNumbers[4]);
+        button6.setText(pu.shuffledButtonNumbers[5]);
+        button7.setText(pu.shuffledButtonNumbers[6]);
+        button8.setText(pu.shuffledButtonNumbers[7]);
+        button9.setText(pu.shuffledButtonNumbers[8]);
+        button10.setText(pu.shuffledButtonNumbers[9]);
+        button11.setText(pu.shuffledButtonNumbers[10]);
+        button12.setText(pu.shuffledButtonNumbers[11]);
+        button13.setText(pu.shuffledButtonNumbers[12]);
+        button14.setText(pu.shuffledButtonNumbers[13]);
+        button15.setText(pu.shuffledButtonNumbers[14]);
+        button16.setText("");
+        
+        for (int i = 0; i <= 14; i++) {
+            pu.shuffledButtonNumbers[i] = null;
+        }
+        
+    }
+     
+    public boolean isWon(){
+        if (button1.getText().equals("1") && button2.getText().equals("2") && 
+                button3.getText().equals("3") && button4.getText().equals("4") && 
+                button5.getText().equals("5") && button6.getText().equals("6") && 
+                button7.getText().equals("7") && button8.getText().equals("8") && 
+                button9.getText().equals("9") && button10.getText().equals("10") && 
+                button11.getText().equals("11") && button12.getText().equals("12") && 
+                button13.getText().equals("13") && button14.getText().equals("14") && 
+                button15.getText().equals("15") && button16.getText().equals("")){
+            return true;
+            
+        } else {
+            return false;
+        }
     }
     
     public static void main(String[] args) {
         SlidePuzzle sp = new SlidePuzzle();
         PuzzleUtil pu = new PuzzleUtil();
-        
-        pu.shuffleNumbersForButtons();
-        pu.setRandomNumbersOnButtons();
-        // Kolla direkt här om sifforna råkat hamna i ordning, så att spelet redan är vunnet.
-        // isWon()
-    
     }
 }

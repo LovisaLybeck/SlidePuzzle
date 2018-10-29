@@ -45,11 +45,6 @@ public class PuzzleUtilTest {
         TestCase.assertFalse(button16.getText() == "");
     }
     
-    @Test
-    public void isWonTest(){
-        
-    }
-    
     // Används inte
 //    @Test
 //    public void buttonsTextToIntTest() {
