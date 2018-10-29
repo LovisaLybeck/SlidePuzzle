@@ -66,8 +66,9 @@ public class SlidePuzzle extends JFrame{
         puzzlePanel.add(button16);
         
         button1.setPreferredSize(new Dimension(50, 50));
+        puzzlePanel.setPreferredSize(new Dimension(250, 250));
         
-        setSize(300, 330);
+        setSize(300, 360);
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

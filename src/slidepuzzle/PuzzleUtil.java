@@ -30,6 +30,7 @@ public class PuzzleUtil {
         }        
     }
     
+    
     public void setRandomNumbersOnButtons(){
         SlidePuzzle sp = new SlidePuzzle();
         sp.button1.setText(shuffledButtonNumbers[0]);
