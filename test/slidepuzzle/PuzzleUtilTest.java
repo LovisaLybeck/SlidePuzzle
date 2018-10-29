@@ -9,12 +9,6 @@ public class PuzzleUtilTest {
     PuzzleUtil pu = new PuzzleUtil();
     SlidePuzzle sp = new SlidePuzzle();
     
-    @Test
-    public void isNextToEmptyButtonTest(){
-        
-    }
-    
-    
     @Test //jny
     public void shuffleNumbersForButtonsTest(){
         pu.shuffleNumbersForButtons();

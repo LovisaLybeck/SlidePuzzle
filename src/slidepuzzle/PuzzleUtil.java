@@ -5,16 +5,8 @@ import javax.swing.JButton;
 
 public class PuzzleUtil {
     
-    // SlidePuzzle sp = new SlidePuzzle();
+//    SlidePuzzle sp = new SlidePuzzle();
     String[] shuffledButtonNumbers = new String[15];
-    
-    // para: klickad knapp  return: tom knapp = obj JButton
-    public void isNextToEmptyButton(){
-        // Om tom knapp inte finns bredvid klickad knapp så ändrar den 
-        // texten i wonLabel
-        // kallar på switchButtons
-        
-    }
     
     public void shuffleNumbersForButtons(){
         for (int i = 1; i <= 15; i++) {
