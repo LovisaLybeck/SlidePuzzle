@@ -18,8 +18,8 @@ public class SlidePuzzle extends JFrame{
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
-    // Tog bort initialiseringen här, på alla utom den tomma knappen. 
-    // De byter nummer längre ner, innan de visas för första gången.
+    // Tog bort tilldelningen här, på alla utom den tomma knappen. 
+    // De får sitt randomiserade nummer innan de visas för första gången.
     JButton button1 = new JButton();
     JButton button2 = new JButton();
     JButton button3 = new JButton();
@@ -72,26 +72,6 @@ public class SlidePuzzle extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        pu.shuffleNumbersForButtons();
-        button1.setText(pu.shuffledButtonNumbers[0]);
-        button2.setText(pu.shuffledButtonNumbers[1]);
-        button3.setText(pu.shuffledButtonNumbers[2]);
-        button4.setText(pu.shuffledButtonNumbers[3]);
-        button5.setText(pu.shuffledButtonNumbers[4]);
-        button6.setText(pu.shuffledButtonNumbers[5]);
-        button7.setText(pu.shuffledButtonNumbers[6]);
-        button8.setText(pu.shuffledButtonNumbers[7]);
-        button9.setText(pu.shuffledButtonNumbers[8]);
-        button10.setText(pu.shuffledButtonNumbers[9]);
-        button11.setText(pu.shuffledButtonNumbers[10]);
-        button12.setText(pu.shuffledButtonNumbers[11]);
-        button13.setText(pu.shuffledButtonNumbers[12]);
-        button14.setText(pu.shuffledButtonNumbers[13]);
-        button15.setText(pu.shuffledButtonNumbers[14]);
-        // Kolla direkt här om sifforna råkat hamna i ordning, 
-        // så att spelet redan är vunnet.
-        // isWon()
-        
         class ButtonListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -102,5 +82,14 @@ public class SlidePuzzle extends JFrame{
     
     public static void main(String[] args) {
         SlidePuzzle sp = new SlidePuzzle();
+        PuzzleUtil pu = new PuzzleUtil();
+        
+        pu.shuffleNumbersForButtons();
+        pu.setRandomNumbersOnButtons();
+        // Kolla direkt här om sifforna råkat hamna i ordning, så att spelet redan är vunnet.
+        // isWon()
+
+        
+        
     }
 }
