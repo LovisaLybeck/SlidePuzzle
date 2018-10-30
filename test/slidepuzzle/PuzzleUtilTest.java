@@ -9,13 +9,7 @@ public class PuzzleUtilTest {
     PuzzleUtil pu = new PuzzleUtil();
     SlidePuzzle sp = new SlidePuzzle();
     
-    @Test
-    public void isNextToEmptyButtonTest(){
-        
-    }
-    
-    
-    @Test
+    @Test //jny
     public void shuffleNumbersForButtonsTest(){
         pu.shuffleNumbersForButtons();
         int nr1 = Integer.parseInt(pu.shuffledButtonNumbers[0]);
@@ -49,11 +43,6 @@ public class PuzzleUtilTest {
         TestCase.assertFalse(button15.getText() == "9");
         TestCase.assertTrue(button16.getText() == "9");
         TestCase.assertFalse(button16.getText() == "");
-    }
-    
-    @Test
-    public void isWonTest(){
-        
     }
     
     // Används inte
