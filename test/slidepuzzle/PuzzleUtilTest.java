@@ -45,15 +45,30 @@ public class PuzzleUtilTest {
         TestCase.assertFalse(button16.getText() == "");
     }
     
-    // Används inte
-//    @Test
-//    public void buttonsTextToIntTest() {
-//        JButton button20 = new JButton("20");
-//        int actualNumber = pu.buttonsTextToInt(button20);
-//        int expectedNumber = 20;
-//        int wrongNumber = 10;
-//        TestCase.assertTrue(actualNumber == expectedNumber);
-//        TestCase.assertFalse(actualNumber == wrongNumber);
-//    }
-    
+    @Test
+    public void isWonTest(){
+        JButton[] buttonArray = new JButton[16];
+        buttonArray[0] = new JButton("1");
+        buttonArray[1] = new JButton("2");
+        buttonArray[2] = new JButton("3");
+        buttonArray[3] = new JButton("4");
+        buttonArray[4] = new JButton("5");
+        buttonArray[5] = new JButton("6");
+        buttonArray[6] = new JButton("7");
+        buttonArray[7] = new JButton("8");
+        buttonArray[8] = new JButton("9");
+        buttonArray[9] = new JButton("10");
+        buttonArray[10] = new JButton("11");
+        buttonArray[11] = new JButton("12");
+        buttonArray[12] = new JButton("13");
+        buttonArray[13] = new JButton("14");
+        buttonArray[14] = new JButton("15");
+        buttonArray[15] = new JButton("");
+        
+        TestCase.assertTrue(pu.isWon(buttonArray));
+        
+        buttonArray[7].setText("1");
+        
+        TestCase.assertFalse(pu.isWon(buttonArray));
+    }
 }
