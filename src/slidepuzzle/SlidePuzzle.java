@@ -14,7 +14,6 @@ public class SlidePuzzle extends JFrame{
     JPanel puzzlePanel = new JPanel();
     JPanel topPanel = new JPanel();
     JPanel bottomPanel = new JPanel();
-    JLabel newGameLabel = new JLabel();
     JLabel wonLabel = new JLabel("Puzzle Game");
     JButton newGameButton = new JButton("Nytt spel");
     
@@ -178,7 +177,7 @@ public class SlidePuzzle extends JFrame{
             }
         });
         
-        button1.setPreferredSize(new Dimension(50, 50));
+        
         puzzlePanel.setPreferredSize(new Dimension(250, 250));
         setSize(300, 380);
         setLocationRelativeTo(null);
